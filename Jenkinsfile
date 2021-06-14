@@ -5,7 +5,8 @@ pipeline {
       parallel {
         stage('Say Hello') {
           steps {
-            sh 'echo "Hello World"'
+            sh '''echo "Hello World"
+'''
           }
         }
 
@@ -17,7 +18,15 @@ pipeline {
 
           }
           steps {
-            sh 'ci/build-app.sh'
+            sh '''
+
+ci/build-app.sh'''
+          }
+        }
+
+        stage('') {
+          steps {
+            sh 'chmod 755 ci/build-app.sh'
           }
         }
 
