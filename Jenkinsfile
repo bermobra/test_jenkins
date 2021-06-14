@@ -20,11 +20,11 @@ pipeline {
           steps {
             sh '''
 
-ci/build-app.sh'''
+bash -x ci/build-app.sh'''
           }
         }
 
-        stage('') {
+        stage('error') {
           steps {
             sh 'chmod 755 ci/build-app.sh'
           }
